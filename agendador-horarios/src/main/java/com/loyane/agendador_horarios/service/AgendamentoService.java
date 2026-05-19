@@ -20,7 +20,7 @@ public class AgendamentoService {
     public Agendamento salvarAgendamento(Agendamento agendamento){
 
         LocalDateTime horaAgendamento = agendamento.getDataHoraAgendamento();
-        LocalDateTime horaFim = agendamento.getDataHoraAgendamento().plusMinutes(1);
+        LocalDateTime horaFim = agendamento.getDataHoraAgendamento().plusHours(1);
 
         Agendamento agendados = agendamentoRepository.findByServicoAndDataHoraAgendamentoBetween(agendamento.getServico(),
                 horaAgendamento, horaFim);
